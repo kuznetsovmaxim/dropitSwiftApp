@@ -67,7 +67,7 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate
         
     }
 
-    var indexOf: Int = 0
+    var indexOf: Int = 1
 
 //    Функция отрисовки фигур и применения анимации
     func drop(){
@@ -83,26 +83,28 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate
         gravity.addItem(dropView)
         collider.addItem(dropView) 
         
-
         
 //      Цикл генерации фигур
-    
-        for cnt in 1...1
-        {
-            if dropsPerColumn == 1
+       
+//        if indexOf < 10
+//        {
+            for indexOf = 1; indexOf <= 2; ++indexOf
             {
-                break
+//                for cnt in 1...1
+//                {
+                    let delay = Int64( Double(1)/100 * Double(NSEC_PER_SEC) )
+                    let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
+                    dispatch_after(dispatchTime, dispatch_get_main_queue())
+                    {
+                        self.drop()
+                    }
+//                }
+                print(indexOf)
             }
-            else
-            {
-                let delay = Int64( Double(cnt)/100 * Double(NSEC_PER_SEC) )
-                let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
-                dispatch_after(dispatchTime, dispatch_get_main_queue())
-                {
-                    self.drop()
-                }
-            }
-        }
+//        }
+   
+        
+
         
         
 //  ______________________________________________________________________________
