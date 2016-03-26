@@ -105,6 +105,25 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate
         }
         
         
+//  ______________________________________________________________________________
+//        for cnt in 1...1
+//        {
+//            if dropsPerColumn == 1
+//            {
+//                break
+//            }
+//            else
+//            {
+//                let delay = Int64( Double(cnt)/100 * Double(NSEC_PER_SEC) )
+//                let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
+//                dispatch_after(dispatchTime, dispatch_get_main_queue())
+//                    {
+//                        self.drop()
+//                }
+//            }
+//        }
+//        ___________________________________________________________________________
+        
 //        for cnt in 1...1
 //        {
 //            if indexOf < 10
