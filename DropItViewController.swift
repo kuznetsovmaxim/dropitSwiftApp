@@ -89,23 +89,41 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate
     
         for cnt in 1...1
         {
-            if indexOf < 10
-            {
-                for var indexOf = 0; indexOf == 10; ++indexOf
-                {
-                    let delay = Int64( Double(cnt)/100 * Double(NSEC_PER_SEC) )
-                    let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
-                    dispatch_after(dispatchTime, dispatch_get_main_queue())
-                        {
-                            self.drop()
-                    }
-                }
-            }
-            else
+            if dropsPerColumn == 1
             {
                 break
             }
+            else
+            {
+                let delay = Int64( Double(cnt)/100 * Double(NSEC_PER_SEC) )
+                let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
+                dispatch_after(dispatchTime, dispatch_get_main_queue())
+                {
+                    self.drop()
+                }
+            }
         }
+        
+        
+//        for cnt in 1...1
+//        {
+//            if indexOf < 10
+//            {
+//                for var indexOf = 0; indexOf == 10; ++indexOf
+//                {
+//                    let delay = Int64( Double(cnt)/100 * Double(NSEC_PER_SEC) )
+//                    let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
+//                    dispatch_after(dispatchTime, dispatch_get_main_queue())
+//                        {
+//                            self.drop()
+//                    }
+//                }
+//            }
+//            else
+//            {
+//                break
+//            }
+//        }
         
     }
 }
