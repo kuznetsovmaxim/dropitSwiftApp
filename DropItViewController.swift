@@ -58,20 +58,41 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate
     
     @IBAction func btn(sender: UIButton) {
     
-        drop()
+        drop2()
         
     }
 //    Создаем событие касания с логикой в отедльной функции drop()
     @IBAction func drop(sender: UITapGestureRecognizer) {
-//        drop()
+        drop()
         
     }
+ var indexOf = 1
+    
+    func drop2(){
+       
+        while indexOf < 30
+        {
+            let delay = Int64( Double(indexOf) * Double(NSEC_PER_SEC) )
+            let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
+            dispatch_after(dispatchTime, dispatch_get_main_queue())
+            {
+                self.drop()
+                
+            }
 
-    var indexOf: Int = 1
+            
+            indexOf += 1
+            print(indexOf)
+        }
+    }
+
 
 //    Функция отрисовки фигур и применения анимации
-    func drop(){
-     
+    func drop()
+    {
+
+        
+        
         var frame = CGRect(origin: CGPointZero, size: dropSize)
         frame.origin.x = CGFloat.random(dropsPerRow) * dropSize.width
         
@@ -85,27 +106,36 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate
         
         
 //      Цикл генерации фигур
-       
-//        if indexOf < 10
-//        {
-            for indexOf = 1; indexOf <= 2; ++indexOf
-            {
-//                for cnt in 1...1
+        
+        
+    
+        
+        
+        
+        
+//        _________________________________________________________________________
+        
+//            for indexOf in 1...10
+//            {
+//                if indexOf != 10
 //                {
-                    let delay = Int64( Double(1)/100 * Double(NSEC_PER_SEC) )
-                    let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
-                    dispatch_after(dispatchTime, dispatch_get_main_queue())
-                    {
-                        self.drop()
-                    }
+//                    for cnt in 1...1
+//                    {
+//                    let delay = Int64( Double(cnt)/1000 * Double(NSEC_PER_SEC) )
+//                    let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
+//                    dispatch_after(dispatchTime, dispatch_get_main_queue())
+//                        {
+//                            self.drop()
+//                        }
+//                    }
 //                }
-                print(indexOf)
-            }
-//        }
-   
-        
-
-        
+//                else
+//                {
+//                    break
+//                }
+//                print(indexOf)
+//            }
+      
         
 //  ______________________________________________________________________________
 //        for cnt in 1...1
