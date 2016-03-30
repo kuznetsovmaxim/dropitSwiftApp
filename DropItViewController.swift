@@ -70,9 +70,9 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate
     
     func drop2(){
        
-        while indexOf < 30
+        while indexOf < 300
         {
-            let delay = Int64( Double(indexOf) * Double(NSEC_PER_SEC) )
+            let delay = Int64( Double(indexOf)/100 * Double(NSEC_PER_SEC) )
             let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
             dispatch_after(dispatchTime, dispatch_get_main_queue())
             {
